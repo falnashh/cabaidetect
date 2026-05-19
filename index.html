@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Hama Cabai Rawit - AI Pest Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🌶️</span>
+                <h1>Deteksi Hama Cabai Rawit</h1>
+            </div>
+            <p class="subtitle">Identifikasi hama dan penyakit melalui foto daun cabai</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                        <div class="upload-icon">📸</div>
+                        <h3>Upload Foto Daun Cabai</h3>
+                        <p>Klik atau drag & drop foto daun cabai di sini</p>
+                        <p class="format-hint">Format: JPG, PNG (Maks. 5MB)</p>
+                        <button class="btn-primary" id="uploadBtn">Pilih Foto</button>
+                    </div>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="preview-section" id="previewSection" style="display: none;">
+                    <div class="preview-card">
+                        <h3>Preview Gambar</h3>
+                        <div class="image-preview">
+                            <img id="previewImage" alt="Preview">
+                        </div>
+                        <div class="preview-actions">
+                            <button class="btn-secondary" id="changeImageBtn">Ganti Foto</button>
+                            <button class="btn-primary" id="analyzeBtn">Analisis dengan AI</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Section -->
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loader"></div>
+                <p>AI sedang menganalisis gambar...</p>
+                <p class="loading-subtitle">Mohon tunggu sebentar</p>
+            </div>
+
+            <!-- Result Section -->
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-card">
+                    <div class="result-header">
+                        <span class="result-icon" id="resultIcon"></span>
+                        <h2>Hasil Deteksi</h2>
+                    </div>
+                    
+                    <div class="result-content">
+                        <div class="pest-info">
+                            <div class="info-row">
+                                <span class="label">Jenis Hama/Penyakit:</span>
+                                <span class="value pest-name" id="pestName"></span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Tingkat Keyakinan:</span>
+                                <div class="confidence-container">
+                                    <span class="value" id="confidence"></span>
+                                    <div class="confidence-bar">
+                                        <div class="confidence-fill" id="confidenceFill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Deskripsi:</span>
+                                <span class="value" id="description"></span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Penanganan:</span>
+                                <span class="value" id="handling"></span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Rekomendasi Pestisida:</span>
+                                <span class="value pesticide" id="pesticide"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button class="btn-secondary" id="resetBtn">Deteksi Lagi</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips Section -->
+            <div class="tips-section">
+                <h3>💡 Tips Pencegahan Hama Cabai Rawit</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <span class="tip-icon">🌱</span>
+                        <h4>Rotasi Tanaman</h4>
+                        <p>Lakukan rotasi tanaman untuk memutus siklus hidup hama</p>
+                    </div>
+                    <div class="tip-card">
+                        <span class="tip-icon">💧</span>
+                        <h4>Pengairan Teratur</h4>
+                        <p>Jangan terlalu basah atau terlalu kering untuk mencegah jamur</p>
+                    </div>
+                    <div class="tip-card">
+                        <span class="tip-icon">🐞</span>
+                        <h4>Musuh Alami</h4>
+                        <p>Manfaatkan predator alami seperti kepik dan laba-laba</p>
+                    </div>
+                    <div class="tip-card">
+                        <span class="tip-icon">🌿</span>
+                        <h4>Tanaman Pendamping</h4>
+                        <p>Tanam bawang atau kemangi untuk mengusir hama</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Deteksi Hama Cabai Rawit - Teknologi AI untuk Pertanian Modern</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
