@@ -1,6 +1,5 @@
-Flask
-Flask-CORS
-tensorflow-cpu
-Pillow
-numpy
+flask
 gunicorn
+tensorflow
+pillow
+numpy
